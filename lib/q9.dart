@@ -1,13 +1,17 @@
-void main(List<String> arguments) {}
+void main(List<String> arguments) {
+  isPalindrome(121);
+}
+
 bool isPalindrome(int x) {
   if (x < 0 || (x % 10 == 0 && x != 0)) {
     return false;
   }
   int revertedNumber = 0;
-  while (x >= revertedNumber) {
+  while (x > revertedNumber) {
     revertedNumber = revertedNumber * 10 + x % 10;
-
-    x = x ~/ 10;
+    x = (x / 10).floor();
+    print(x);
   }
-  return x == revertedNumber || x == revertedNumber / 10;
+  print(x == revertedNumber || x == revertedNumber ~/ 10);
+  return x == revertedNumber || x == revertedNumber ~/ 10;
 }
